@@ -1,0 +1,9 @@
+import { UserProfile } from "@clerk/nextjs";
+
+export default function UserAccountPage() {
+    return (
+        <div className="h-screen w-full flex justify-center items-center">
+            <UserProfile />
+        </div>
+    )
+}

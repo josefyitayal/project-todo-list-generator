@@ -22,6 +22,8 @@ model User {
   email String @unique
   profile_picture String?
 
+  projects Project[]
+
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }
@@ -32,6 +34,12 @@ model Project {
   project_description String?
 
   tasks Task[]
+
+  user_id String
+  user User @relation(fields: [user_id], references: [id])
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
 enum TaskStatus {
